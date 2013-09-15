@@ -1,0 +1,29 @@
+<?php
+/* 
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+function node_gun_menu() {
+    
+    $items['node_gun/test'] = array(
+    'title' => 'Test Node Gun Mail',
+    'page callback' => 'node_gun_sample',
+    'access arguments' => array('access content'),
+    'page arguments' => array(2),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+    
+} 
+
+function node_gun_sample($emailName = 'mark.simpson78@hotmail.co.uk') {
+    module_load_include('php', 'node_gun', 'mailgun/Mailgun');
+    module_load_include('php', 'node_gun', 'templates/sendmail.tpl/' . $emailName);
+    echo 'Some Good Shit! ' , $emailName;
+    exit;
+    
+}
+
+

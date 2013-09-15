@@ -1,0 +1,4 @@
+name = Node Gun
+description = Create e-mails campaigns from user lists and nodes to send via Mailgun 
+core = 7.x
+package = Email
